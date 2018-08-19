@@ -28,6 +28,7 @@
 		}
 		function search( $dni )
 		{
+            header('Content-type: application/json');
 			$this->database['DNI']=$dni;
 			$this->reniec->search( $dni,$this->database);
 			$this->essalud->check($dni,$this->database);
@@ -40,10 +41,10 @@
             array_map($vacio,$this->database);
 			if($datos==8){
 
-            	print_r("NO HAY INFORMACIÓN EN NUESTRA BASE DE DATOS.");
+                echo "NO HAY INFORMACIÓN EN NUESTRA BASE DE DATOS.";
 			}
 			else{
-                print_r($this->database);
+                var_dump($this->database);
 			}
 		}
 	}
@@ -51,6 +52,7 @@
 	// MODO DE USO
 	/*  */
 	require_once( __DIR__ . "/src/autoload.php" );
+	$dni=$_POST['dni'] ;
 	$test = new Peru();
-	$test->search("76696881") ;
+	$test->search($dni) ;
 ?>
