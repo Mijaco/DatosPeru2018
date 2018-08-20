@@ -139,7 +139,6 @@
 
         function check( $dni, &$database )
         {
-	 print_r($dni);
             if( strlen($dni) == 8 )
             {
                 $result = $this->getDatosSPP( $dni );
