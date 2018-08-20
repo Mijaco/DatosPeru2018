@@ -1,7 +1,9 @@
 <?php
 	namespace DatosPeru;
 
-	class Peru
+	use SPP\Spp;
+
+class Peru
 	{
 
 		private $database;
@@ -13,6 +15,7 @@
 			$this->reniec = new \Reniec\Reniec(); 
 			$this->essalud = new \EsSalud\EsSalud();
 			$this->mintra = new \MinTra\Mintra();
+            $this->spp= new Spp();
 
 			$this->database = array(
                 "DNI" 			=> null,
@@ -33,7 +36,8 @@
 			$this->reniec->search( $dni,$this->database);
 			$this->essalud->check($dni,$this->database);
 			$this->mintra->check($dni,$this->database);
-			
+			$this->spp->check($dni,$this->database);
+
             if(is_null($dni)){
                 return array("status"=>false,"mensaje"=>"ERROR DE COMUNICACION.");
             }
@@ -56,7 +60,7 @@
 	}
 	
 	// MODO DE USO
-	/*  */
+//	/*  */
 	require_once( __DIR__ . "/src/autoload.php" );
 	$dni=$_GET['dni'] ;
 	$test = new Peru();

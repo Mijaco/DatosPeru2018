@@ -54,7 +54,7 @@ class Mintra
                     if(is_null($database['Distrito']))$database['Distrito'] = $result["Distrito"];
                     if(is_null($database['Provincia']))$database['Provincia'] = $result["Provincia"];
                     if(is_null($database['Departamento']))$database['Departamento'] = $result["Departamento"];
-                    if(is_null($database['Sexo']))$database['Sexo'] = $result["Sexo"];
+                    if(is_null($database['Sexo']))$database['Sexo'] = $result["Sexo"]==2?0:1;
                     if(is_null($database['FechaNacimiento']))$database['FechaNacimiento'] = $result["FechaNacimiento"];
 				}
 			}
