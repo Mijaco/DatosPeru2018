@@ -9,6 +9,6 @@ Datos basicos de un ciudadano peruano:
 * Departamento 	
 * Sexo 
 * FechaNacimiento 
-# USO
-*http://localhost/api/Peru.php?dni=00000010
-*http://127.0.0.1/api/Peru.php?dni=00000010
+# USO COMO API WEB
+* http://localhost/api/Peru.php?dni=00000010
+* http://127.0.0.1/api/Peru.php?dni=00000010
