@@ -1,7 +1,6 @@
 <?php
 	namespace DatosPeru;
 
-	use SPP\Spp;
 
 class Peru
 	{
@@ -15,7 +14,7 @@ class Peru
 			$this->reniec = new \Reniec\Reniec(); 
 			$this->essalud = new \EsSalud\EsSalud();
 			$this->mintra = new \MinTra\Mintra();
-            $this->spp= new Spp();
+            $this->spp= new \SPP\Spp();
 
 			$this->database = array(
                 "DNI" 			=> null,
