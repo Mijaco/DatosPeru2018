@@ -1,5 +1,5 @@
 # Datos Perú 2018
-Datos basicos de una persona Perú
+Datos basicos de un ciudadano peruano:
 * DNI 			
 * Nombres 		
 * Paterno 	
@@ -9,3 +9,6 @@ Datos basicos de una persona Perú
 * Departamento 	
 * Sexo 
 * FechaNacimiento 
+# USO
+*http://localhost/api/Peru.php?dni=00000010
+*http://127.0.0.1/api/Peru.php?dni=00000010
