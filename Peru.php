@@ -33,18 +33,24 @@
 			$this->reniec->search( $dni,$this->database);
 			$this->essalud->check($dni,$this->database);
 			$this->mintra->check($dni,$this->database);
+			
+            if(is_null($dni)){
+                return array("status"=>false,"mensaje"=>"ERROR DE COMUNICACION.");
+            }
+            else if(strlen($dni)<8) return array("status"=>false,"mensaje"=>"DNI INCORRECTO");
 			$datos=0;
 			$vacio= function($dato) use (&$datos)
             {
                 if(is_null($dato))$datos++;
             };
             array_map($vacio,$this->database);
-			if($datos==8){
 
-                echo "NO HAY INFORMACIÓN EN NUESTRA BASE DE DATOS.";
+            if($datos==8){
+
+                return array("status"=>false,"mensaje"=>"NO HAY INFORMACION EN NUESTRA BASE DE DATOS.");
 			}
 			else{
-                var_dump($this->database);
+                return array("status"=>true,"resultado"=> (object) $this->database);
 			}
 		}
 	}
@@ -52,7 +58,7 @@
 	// MODO DE USO
 	/*  */
 	require_once( __DIR__ . "/src/autoload.php" );
-	$dni=$_POST['dni'] ;
+	$dni=$_GET['dni'] ;
 	$test = new Peru();
-	$test->search($dni) ;
+	echo  json_encode($test->search($dni)) ;
 ?>

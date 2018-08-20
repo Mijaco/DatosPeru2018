@@ -48,7 +48,6 @@ class Mintra
 				$result = $this->getDataMinTra( $dni );
 				if( $result!=false )
 				{
-					print_r($result);
 					if(is_null($database['Nombres']))$database['Nombres'] = $result["Nombres"];
                     if(is_null($database['Paterno']))$database['Paterno'] = $result["Paterno"];
                     if(is_null($database['Materno']))$database['Materno'] = $result["Materno"];
